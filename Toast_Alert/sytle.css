@@ -1,0 +1,51 @@
+:root {
+  --success: #01ad01;
+  --danger: #ee1b24;
+}
+
+.toast_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 100px;
+  top: 100px;
+  width: 350px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 5px 10px 15px #dedede;
+  border-left: 3px solid var(--success);
+}
+
+.toast_icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 5%;
+  background-color: var(--success);
+  background-image: url("./img/White_check32.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.toast_info {
+  margin-left: 5%;
+}
+
+.toast_title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toast_desc {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.toast_progress {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--success);
+  bottom: 0px;
+}
