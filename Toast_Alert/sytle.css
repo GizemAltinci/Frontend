@@ -3,11 +3,15 @@
   --danger: #ee1b24;
 }
 
+body {
+  overflow: hidden;
+}
+
 .toast_container {
   position: absolute;
   display: flex;
   align-items: center;
-  right: 100px;
+  right: -350px;
   top: 100px;
   width: 350px;
   height: 80px;
@@ -15,6 +19,15 @@
   background-color: white;
   box-shadow: 5px 10px 15px #dedede;
   border-left: 3px solid var(--success);
+  transition: transform 250ms ease-in;
+}
+
+.toast_container.show {
+  transform: translateX(-450px);
+}
+
+.toast_container.hide {
+  transform: translateX(450px);
 }
 
 .toast_icon {
@@ -42,10 +55,42 @@
   font-weight: 400;
 }
 
+.toast_close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 5px;
+  top: 5px;
+  background-image: url("./img/Black_crossed.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.toast_close:hover {
+  opacity: 1;
+}
+
 .toast_progress {
   position: absolute;
   width: 100%;
   height: 5px;
   background-color: var(--success);
   bottom: 0px;
+}
+
+.toast_container.show .toast_progress {
+  animation-name: progress;
+  animation-delay: 2s;
+  animation-duration: 5s;
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
