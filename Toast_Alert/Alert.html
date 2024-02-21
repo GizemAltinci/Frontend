@@ -14,10 +14,13 @@
         <div class="toast_desc">Description Test</div>
       </div>
       <div class="toast_progress"></div>
-      <div class="toast_close"></div>
+      <div class="toast_close" onclick="closeAlert()"></div>
     </div>
 
-    <button onclick="showHide()">Show Hide</button>
+    <button class="btn btn-success" onclick="showHide('success')">
+      Success
+    </button>
+    <button class="btn btn-danger" onclick="showHide('danger')">Danger</button>
 
     <script src="./Toast.js"></script>
   </body>

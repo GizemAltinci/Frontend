@@ -5,6 +5,9 @@
 
 body {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .toast_container {
@@ -18,8 +21,16 @@ body {
   border-radius: 5px;
   background-color: white;
   box-shadow: 5px 10px 15px #dedede;
-  border-left: 3px solid var(--success);
+
   transition: transform 250ms ease-in;
+}
+
+.toast_container.success {
+  border-left: 3px solid var(--success);
+}
+
+.toast_container.danger {
+  border-left: 3px solid var(--danger);
 }
 
 .toast_container.show {
@@ -34,11 +45,20 @@ body {
   width: 32px;
   height: 32px;
   margin-left: 5%;
-  background-color: var(--success);
-  background-image: url("./img/White_check32.png");
+
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+}
+
+.toast_container.success .toast_icon {
+  background-color: var(--success);
+  background-image: url("./img/White_check32.png");
+}
+
+.toast_container.danger .toast_icon {
+  background-color: var(--danger);
+  background-image: url("./img/clipart2184108.png");
 }
 
 .toast_info {
@@ -76,8 +96,16 @@ body {
   position: absolute;
   width: 100%;
   height: 5px;
-  background-color: var(--success);
+
   bottom: 0px;
+}
+
+.toast_container.success .toast_progress {
+  background-color: var(--success);
+}
+
+.toast_container.danger .toast_progress {
+  background-color: var(--danger);
 }
 
 .toast_container.show .toast_progress {
@@ -93,4 +121,23 @@ body {
   to {
     width: 0%;
   }
+}
+
+.btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 100px;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-success {
+  background-color: var(--success);
+  margin-top: 15rem;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  margin-top: 3px;
 }
